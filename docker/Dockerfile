@@ -30,7 +30,7 @@ RUN apt-get update --fix-missing && \
 ARG username=SRS
 ARG uid=1000
 ARG gid=100
-ENV User $username
+ENV USER $username
 ENV UID $uid
 ENV GID $gid
 ENV HOME /home/$USER
