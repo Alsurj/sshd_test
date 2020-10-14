@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#jupyter labextension install --no-build @pyviz/jupyterlab_pyviz
+#jupyter serverextension enable jupyterlab_sql --py --sys-prefix
+#jupyter lab build
+
+#conda pip install git+https://github.com/NVIDIA/MinkowskiEngine.git  dosnt work!
+
+# conda install -y pytorch torchvision cudatoolkit=10.2 -c pytorch  -> results in pytorch v1.0.0
+conda install -y pytorch==1.5.1 torchvision==0.6.1 cudatoolkit=10.2 -c pytorch 
+
+# Works! v0.4.3
+#pip install -U git+https://github.com/StanfordVL/MinkowskiEngine  
+
+# Works! -> If do work check memory -> increase swap size or export MAX_JOBS=2; pip ...
+export MAX_JOBS=4 ; pip install -U  git+https://github.com/NVIDIA/MinkowskiEngine.git@v0.5
+
+#git clone https://github.com/chrischoy/FCGF.git
+# Do the following inside the conda environment
+#pip install -r $HOME/app/src/FCGF/requirements.txt

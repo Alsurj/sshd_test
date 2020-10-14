@@ -1,0 +1,38 @@
+FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
+
+LABEL maintainer="alsurj <alvin.surjana@stud.uni-due.de>"
+
+SHELL ["/bin/bash", "--login", "-c"]
+
+# Install required softwares
+RUN apt-get update --fix-missing && \
+    apt-get install -y \
+    apt-utils \
+    vim \
+    openssh-server \
+    sudo
+
+RUN service ssh start
+
+# Create a non-root user
+ARG username=al-khawarizmi
+ARG uid=1000
+ARG gid=100
+ENV USER $username
+ENV UID $uid
+ENV GID $gid
+ENV HOME /home/$USER
+
+# RUN useradd -m  test && echo "test:test" | chpasswd && adduser test sudo
+
+RUN adduser --disabled-password \
+    --gecos "Non-root user" \
+    --uid $UID \
+    --gid $GID \
+    --home $HOME \
+    $USER
+USER $USER
+
+EXPOSE 22
+
+CMD echo "This is a test" | wc -
