@@ -27,7 +27,7 @@ RUN apt-get update --fix-missing && \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # create a non-root user
-ARG username=SRS
+ARG username=srs
 ARG uid=1000
 ARG gid=100
 ENV USER $username
