@@ -35,6 +35,4 @@ when done using the container:
   $ docker container stop CONTAINER_NAME
   
 Do not delete the IMAGE since this will delete all the ssh configuration.
-
-Next step: apply the FastAPI
   
