@@ -1,0 +1,3 @@
+- [x] Enable ssh connection
+- [ ] Implement a FastAPI script to transfer test/train data
+- [ ] Adapt the template to the real Gitlab CI/CD pipline
