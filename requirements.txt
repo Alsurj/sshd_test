@@ -3,3 +3,5 @@ jupyterlab_sql==0.3.*
 uvicorn
 
 fastapi
+
+pydantic
