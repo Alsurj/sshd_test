@@ -26,4 +26,6 @@ img = base64str_to_PILImage(data)
 
 imgplot = plt.imshow(img)
 
-plt.show()
+#plt.show()
+
+plt.savefig("frame993.png")
