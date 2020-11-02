@@ -71,6 +71,8 @@ RUN chown $UID:$GID /usr/local/bin/entrypoint.sh && \
 COPY src/ /src/
 RUN chown $UID:$GID /src/
 
+COPY payload.py /usr/srs/
+
 USER $USER
 
 # install miniconda
